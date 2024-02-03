@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #111;
+}
+
+section h2 {
+    font-size: 10em;
+    color: #333;
+}
+
+section span {
+    width: 60px;
+    height: 60px;
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.5);
+    position: absolute;
+    bottom: -50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    background-color: transparent;
+    pointer-events: none;
+    animation: buble_move 4s linear infinite;
+    -webkit-animation: bubble_move 4s linear infinite;
+}
+
+section span::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(#fff, transparent);
+    transform: translate(-20%, -20%) scale(20%);
+    -webkit-transform: scale(20%) translate(-80%, -80%);
+    -moz-transform: translate(-20%, -20%) scale(20%);
+    -ms-transform: translate(-20%, -20%) scale(20%);
+    -o-transform: translate(-20%, -20%) scale(20%);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+@keyframes bubble_move {
+    0% {
+        transform: translate(0%, 0%);
+        -webkit-transform: translate(0%, 0%);
+        -moz-transform: translate(0%, 0%);
+        -ms-transform: translate(0%, 0%);
+        -o-transform: translate(0%, 0%);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(-100%, -600%);
+        -webkit-transform: translate(-100%, -600%);
+        -moz-transform: translate(-100%, -600%);
+        -ms-transform: translate(-100%, -600%);
+        -o-transform: translate(-100%, -600%);
+    }
+
+    97% {
+        transform: translate(20%, -1200%);
+        -webkit-transform: translate(20%, -1200%);
+        -moz-transform: translate(20%, -1200%);
+        -ms-transform: translate(20%, -1200%);
+        -o-transform: translate(20%, -1200%);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(25%, -1250%);
+        -webkit-transform: translate(25%, -12500%);
+        -moz-transform: translate(25%, -12500%);
+        -ms-transform: translate(25%, -12500%);
+        -o-transform: translate(25%, -12500%);
+        opacity: 0;
+}
+}
